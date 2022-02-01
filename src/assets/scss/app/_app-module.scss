@@ -1,0 +1,13 @@
+.app__module {
+    display: flex;
+    width: 100%;
+
+    &-column--left {
+        width: 25%;
+        margin-right: 40px;
+    }
+
+    &-column--right {
+        width: 100%;
+    }
+}

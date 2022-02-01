@@ -1,0 +1,76 @@
+<template>
+    <nav class="s-tabs">
+        <ul class="s-tabs__list">
+            <li><a class="s-tabs__link s-tabs__link--current" href="#0">All Layouts</a></li>
+            <li><a class="s-tabs__link" href="#0">Recently Used</a></li>
+            <li><a class="s-tabs__link" href="#0">Team Layouts</a></li>
+        </ul>
+    </nav>
+</template>
+
+<script>
+export default {
+}
+</script>
+
+<style>
+:root {
+    --s-tabs-border-bottom-width: 1px;
+    --s-tabs-selected-item-border-bottom-width: 1px;
+}
+</style>
+
+<style lang="scss" scoped>
+.s-tabs {
+    position: relative;
+
+    &::after { // gradient - truncate text
+        content: '';
+        position: absolute;
+        right: -1px;
+        top: 0;
+        height: calc(100% - var(--s-tabs-border-bottom-width));
+        width: 2em;
+        background: linear-gradient(90deg, alpha(var(--color-bg), 0), var(--color-bg));
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+.s-tabs__list {
+    display: flex;
+    overflow: auto;
+    -webkit-overflow-scrolling: auto;
+
+    &::after { // border bottom
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: var(--s-tabs-border-bottom-width);
+        left: 0;
+        bottom: 0;
+        background-color: var(--color-contrast-low);
+    }
+}
+
+.s-tabs__link {
+    color: var(--color-contrast-medium);
+    text-decoration: none;
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    white-space: nowrap;
+    border-bottom: var(--s-tabs-selected-item-border-bottom-width) solid transparent;
+    z-index: 1;
+    transition: .2s;
+
+    &:hover:not(.s-tabs__link--current) {
+        color: var(--color-contrast-high);
+    }
+}
+
+.s-tabs__link--current {
+    position: relative;
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+</style>

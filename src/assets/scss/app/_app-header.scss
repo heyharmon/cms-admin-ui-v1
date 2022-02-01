@@ -1,0 +1,31 @@
+.app__header {
+    position: sticky;
+    top: 0;
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 var(--space-md);
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-xs);
+
+    z-index: 4;
+}
+
+.app__header__column {
+    display: flex;
+    align-items: center;
+    width: calc(100% / 3);
+
+    &--left {}
+
+    &--center {
+        justify-content: center;
+    }
+
+    &--right {
+        justify-content: flex-end;
+    }
+}

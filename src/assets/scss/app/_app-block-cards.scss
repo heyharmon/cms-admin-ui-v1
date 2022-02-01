@@ -1,0 +1,44 @@
+.app__block-card__list {
+    // Block clicked
+    &--chosen {
+        border: 2px solid var(--color-primary);
+    }
+
+    // Block ghost
+    &--ghost {
+        border: 2px solid var(--color-primary);
+    }
+
+    // Block dragging
+    &--drag {
+        border: 2px solid var(--color-primary);
+    }
+}
+
+.app__block-card {
+    margin-bottom: var(--space-xs);
+    background-color: var(--color-bg);
+    box-shadow: var(--shadow-xs);
+    border: 1px solid var(--color-contrast-low);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: var(--shadow-sm);
+    }
+}
+
+.app__block-card__title {
+    padding: var(--space-xxs);
+    border-bottom: 1px solid var(--color-contrast-low);
+}
+
+.app__block-card__img {
+    position: relative;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}
